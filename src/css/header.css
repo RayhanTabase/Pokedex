@@ -1,0 +1,40 @@
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5em;
+  max-height: 5em;
+  background: yellow;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 2em 2em 3em 3em;
+}
+
+#header .logo {
+  height: 100%;
+  margin-right: 2em;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#header .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+#header .links li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1em;
+}
+/*# sourceMappingURL=header.css.map */

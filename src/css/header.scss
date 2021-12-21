@@ -2,13 +2,12 @@
   display: flex;
   height: 5em;
   max-height: 5em;
-  background: yellow;
   align-content: center;
-  padding: 2em 2em 3em 3em;
+  padding: 2em 2em 6em 6em;
 
   .logo {
     height: 100%;
-    margin-right: 2em;
+    margin-right: 5em;
     border: 2px solid black;
     border-radius: 50%;
     overflow: hidden;
@@ -22,7 +21,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 1em;
+      margin-right: 5em;
+    }
+
+    li:last-child {
+      margin-right: none;
     }
   }
 

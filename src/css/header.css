@@ -4,15 +4,14 @@
   display: flex;
   height: 5em;
   max-height: 5em;
-  background: yellow;
   -ms-flex-line-pack: center;
       align-content: center;
-  padding: 2em 2em 3em 3em;
+  padding: 2em 2em 6em 6em;
 }
 
 #header .logo {
   height: 100%;
-  margin-right: 2em;
+  margin-right: 5em;
   border: 2px solid black;
   border-radius: 50%;
   overflow: hidden;
@@ -35,6 +34,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 1em;
+  margin-right: 5em;
+}
+
+#header .links li:last-child {
+  margin-right: none;
 }
 /*# sourceMappingURL=header.css.map */

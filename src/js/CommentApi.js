@@ -18,10 +18,9 @@ const addComment = async (itemId,name,comment) => {
         'Accept': 'application/json'
       },
     });
-    console.log(data)
     if (data.status) {
       totalComments += 1;
-      let currentDate = DateTime.now().toFormat('yyyy-m-dd');
+      let currentDate = DateTime.now().toISODate();
       let item = {creation_date:currentDate ,username:name,comment:comment}
       return item;
     }

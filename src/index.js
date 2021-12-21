@@ -1,4 +1,4 @@
 import './css/style.css';
-import { displayDetails } from './js/commentsPopUp.js';
+import displayDetails from './js/commentsPopUp.js';
 
-displayDetails('Balbasour')
+displayDetails('Balbasour');

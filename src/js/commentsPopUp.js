@@ -1,38 +1,33 @@
 import TestImage from '../images/logo/logo.png';
+
 const mainPage = document.querySelector('main');
 const footer = document.querySelector('footer');
 const header = document.querySelector('#header');
 
-
-
 const hideMainContent = (status) => {
-  if(status) {
+  if (status) {
     mainPage.style.display = 'none';
     footer.style.display = 'none';
     header.style.display = 'none';
-    return
+    return;
   }
   mainPage.style.display = 'block';
   footer.style.display = 'block';
   header.style.display = 'block';
-}
+};
 
+// Delete pop ups of pokemon details
 const deletePopUps = () => {
-  const prevContainer = document.querySelector('.container-pokemon-details')
-  if(prevContainer) prevContainer.remove()
-}
+  const prevContainer = document.querySelector('.container-pokemon-details');
+  if (prevContainer) prevContainer.remove();
+};
 
+// Takes in pokemon details and displays them in a pop up
+const displayDetails = () => {
+  hideMainContent(true);
 
-const displayDetails = (pokemon) => {
-  hideMainContent(true)
-  let name = '';
-  let image = '';
-  let hp = '';
-  let type = '';
-  let stats = '';
-  
-  deletePopUps()
-  let container = document.createElement('div');
+  deletePopUps();
+  const container = document.createElement('div');
   container.className = 'container-pokemon-details';
 
   container.innerHTML = `
@@ -54,10 +49,10 @@ const displayDetails = (pokemon) => {
       </ul>
     </div>
   </div>
-  `
-  let closebtn = container.querySelector('button');
-  closebtn.addEventListener('click',deletePopUps)
-  document.body.appendChild(container)
-}
+  `;
+  const closebtn = container.querySelector('button');
+  closebtn.addEventListener('click', deletePopUps);
+  document.body.appendChild(container);
+};
 
-export {displayDetails}
+export default displayDetails;

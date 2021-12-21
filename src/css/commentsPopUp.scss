@@ -1,14 +1,15 @@
 .container-pokemon-details {
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3em;
+  min-height: 90vh;
+
+
 
   .pokemon-details-box {
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    min-height: 70vh;
     border: 3px solid black;
     display: flex;
     flex-direction: column;
@@ -24,13 +25,16 @@
       border: 0;
       font-size: 3rem;
     }
-
-    .poke-details {
-      height: 100%;
-      min-height: 100%;
+    
+    .poke-details,
+    .poke-comments {
       padding-left: 20%;
       padding-right: 20%;
+    }
 
+    .poke-details {
+      height: 15em;
+    
       .image-conatiner {
         height: 25%;
         border: 1px solid black;
@@ -52,6 +56,13 @@
         li:nth-child(2n) {
           text-align: end;
         }
+      }
+    }
+
+    .poke-comments{
+      h3 {
+        text-align: center;
+        margin-bottom: 1em;
       }
     }
   }

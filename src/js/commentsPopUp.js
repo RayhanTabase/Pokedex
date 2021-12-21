@@ -48,6 +48,14 @@ const displayDetails = () => {
         <li> Color:black </li>
       </ul>
     </div>
+
+    <div class="poke-comments">
+      <h3> Comments (2) </h3>
+      <ul class="container-comments"> </ul>
+    </div>
+
+    <div class="addCommentForm>
+    </div>
   </div>
   `;
   const closebtn = container.querySelector('button');
@@ -55,4 +63,17 @@ const displayDetails = () => {
   document.body.appendChild(container);
 };
 
-export default displayDetails;
+const displayComment = (data) => {
+  const container = document.querySelector('.container-comments');
+  let comment = document.createElement('li');
+  comment.innerHTML = `
+  <li>Comment comment comment<li>
+  `;
+  container.append(comment);
+} 
+
+const displayComments = () => {
+  for (let i = 0; i < 3; i++) displayComment();
+}
+
+export {displayDetails, displayComments};

@@ -1,34 +1,35 @@
 .container-pokemon-details {
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3em;
+  min-height: 90vh;
 }
 
 .container-pokemon-details .pokemon-details-box {
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  min-height: 70vh;
   border: 3px solid black;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 1em;
   overflow: hidden;
 }
 
 .container-pokemon-details .pokemon-details-box .closePopUp {
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   position: absolute;
   width: 12%;
   min-width: 12%;
@@ -37,11 +38,14 @@
   font-size: 3rem;
 }
 
-.container-pokemon-details .pokemon-details-box .poke-details {
-  height: 100%;
-  min-height: 100%;
+.container-pokemon-details .pokemon-details-box .poke-details,
+.container-pokemon-details .pokemon-details-box .poke-comments {
   padding-left: 20%;
   padding-right: 20%;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details {
+  height: 15em;
 }
 
 .container-pokemon-details .pokemon-details-box .poke-details .image-conatiner {
@@ -60,13 +64,19 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 45% 45%;
-  grid-template-columns: 45% 45%;
+      grid-template-columns: 45% 45%;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   row-gap: 1em;
 }
 
 .container-pokemon-details .pokemon-details-box .poke-details .attributes li:nth-child(2n) {
   text-align: end;
 }
+
+.container-pokemon-details .pokemon-details-box .poke-comments h3 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+/*# sourceMappingURL=commentsPopUp.css.map */

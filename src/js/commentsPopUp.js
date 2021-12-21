@@ -1,5 +1,5 @@
 import TestImage from '../images/logo/logo.png';
-import { addComment, getComments } from './InvolvementAPI.js';
+import { addComment, getComments, countComments } from './CommentApi.js';
 
 const mainPage = document.querySelector('main');
 const footer = document.querySelector('footer');
@@ -65,6 +65,7 @@ const displayDetails = () => {
 };
 
 const displayComment = (data) => {
+  console.log(data.username)
   const container = document.querySelector('.container-comments');
   let comment = document.createElement('li');
   comment.innerHTML = `
@@ -76,8 +77,9 @@ const displayComment = (data) => {
 const displayComments = async () => {
   let allComments = await getComments('testcase');
   allComments.forEach((comment) => {
-    displayComment(comment); 
+    displayComment(comment);
   });
+  commentCounterChange();
 }
 
 const displayCommentForm = () => {
@@ -97,9 +99,16 @@ const displayCommentForm = () => {
     let name = data.get('name');
     let comment = data.get('comment');
     let result = await addComment("testcase",name,comment);
-    if (result) displayComment(result)
+    if (result) displayComment(result);
+    commentCounterChange();
     form.reset();
   });
-} 
+}
+
+const commentCounterChange = () => {
+  let number = countComments();
+  const commentCounter = document.querySelector('.comment-counter');
+  commentCounter.innerHTML = `${number}`;
+}
 
 export {displayDetails, displayComments, displayCommentForm};

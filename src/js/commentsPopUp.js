@@ -1,5 +1,5 @@
 import TestImage from '../images/logo/logo.png';
-import { addComment } from './commentsApi.js';
+import { addComment, getComments } from './InvolvementAPI.js';
 
 const mainPage = document.querySelector('main');
 const footer = document.querySelector('footer');
@@ -51,7 +51,7 @@ const displayDetails = () => {
     </div>
 
     <div class="poke-comments">
-      <h3> Comments (2) </h3>
+      <h3> Comments <span class="comment-counter"></span> </h3>
       <ul class="container-comments"> </ul>
     </div>
 
@@ -68,13 +68,16 @@ const displayComment = (data) => {
   const container = document.querySelector('.container-comments');
   let comment = document.createElement('li');
   comment.innerHTML = `
-  <li>Comment comment comment<li>
+  <li>${data.creation_date} ${data.username} ${data.comment} <li>
   `;
   container.append(comment);
 } 
 
-const displayComments = () => {
-  for (let i = 0; i < 3; i++) displayComment();
+const displayComments = async () => {
+  let allComments = await getComments('testcase');
+  allComments.forEach((comment) => {
+    displayComment(comment); 
+  });
 }
 
 const displayCommentForm = () => {
@@ -93,7 +96,7 @@ const displayCommentForm = () => {
     const data = new FormData(form);
     let name = data.get('name');
     let comment = data.get('comment');
-    let result = await addComment(name,comment);
+    let result = await addComment("testcase",name,comment);
     if (result) displayComment(result)
     form.reset();
   });

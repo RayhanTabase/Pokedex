@@ -1,4 +1,5 @@
 import TestImage from '../images/logo/logo.png';
+import { addComment } from './commentsApi.js';
 
 const mainPage = document.querySelector('main');
 const footer = document.querySelector('footer');
@@ -54,7 +55,7 @@ const displayDetails = () => {
       <ul class="container-comments"> </ul>
     </div>
 
-    <div class="addCommentForm>
+    <div class="addCommentForm">
     </div>
   </div>
   `;
@@ -76,4 +77,26 @@ const displayComments = () => {
   for (let i = 0; i < 3; i++) displayComment();
 }
 
-export {displayDetails, displayComments};
+const displayCommentForm = () => {
+  const container = document.querySelector('.addCommentForm');
+  container.innerHTML = `
+    <h3>Add a comment</h3>
+    <form>
+      <input type="text" placeholder="Your name" name="name"/>
+      <textarea name="comment" id="" cols="20" rows="10"></textarea>
+      <button type="submit">Comment</button>
+    </form>
+  `
+  let form = container.querySelector('form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    let name = data.get('name');
+    let comment = data.get('comment');
+    let result = await addComment(name,comment);
+    if (result) displayComment(result)
+    form.reset();
+  });
+} 
+
+export {displayDetails, displayComments, displayCommentForm};

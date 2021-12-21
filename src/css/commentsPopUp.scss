@@ -27,7 +27,8 @@
     }
     
     .poke-details,
-    .poke-comments {
+    .poke-comments,
+    .addCommentForm {
       padding-left: 20%;
       padding-right: 20%;
     }
@@ -63,6 +64,21 @@
       h3 {
         text-align: center;
         margin-bottom: 1em;
+      }
+    }
+
+    .addCommentForm {
+      margin-top: 2em;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 1em;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
       }
     }
   }

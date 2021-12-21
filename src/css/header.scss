@@ -1,31 +1,28 @@
 #header {
-  display: flex;
+  margin-top: 1em;
+  padding-left: 5%;
+  width: 100%;
+  min-width: 100%;
   height: 5em;
-  max-height: 5em;
-  align-content: center;
-  padding: 2em 2em 6em 6em;
+  display: grid;
+  grid-template-columns: 20% 60%;
+  column-gap: 10%;
+  overflow: hidden;
 
   .logo {
-    height: 100%;
-    margin-right: 5em;
     border: 2px solid black;
     border-radius: 50%;
     overflow: hidden;
+    background: grey;
   }
 
   .links {
     display: flex;
-    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
 
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 5em;
-    }
-
-    li:last-child {
-      margin-right: 0;
-    }
+  @media only screen and (min-width: 992px) {
+    grid-template-columns: 15% 60%;
   }
 }

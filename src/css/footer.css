@@ -1,12 +1,7 @@
 footer {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 2em;
+  position: absolute;
+  bottom: 0;
   border: 2px solid black;
+  width: 100%;
+  padding: 1em;
 }

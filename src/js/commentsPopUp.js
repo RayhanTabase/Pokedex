@@ -79,18 +79,21 @@ const displayDetails = (data) => {
 const displayComment = (data) => {
   const container = document.querySelector('.container-comments');
   const comment = document.createElement('li');
+  comment.className = "userComment"
   comment.innerHTML = `
-  <li>${data.creation_date} ${data.username} ${data.comment} <li>
+  <span class="date">${data.creation_date}</span> <span class="name">${data.username}</span> <br> <span class="comment">${data.comment} </span>
   `;
   container.append(comment);
 };
 
-const displayComments = async () => {
-  const allComments = await getComments('testcase');
-  allComments.forEach((comment) => {
-    displayComment(comment);
-  });
-  commentCounterChange();
+const displayComments = async (itemId) => {
+  const allComments = await getComments(itemId);
+  if (allComments) {
+    allComments.forEach((comment) => {
+      displayComment(comment);
+    });
+    commentCounterChange();
+  }
 };
 
 const displayCommentForm = (itemId) => {
@@ -115,7 +118,7 @@ const displayCommentForm = (itemId) => {
     const data = new FormData(form);
     const name = data.get('name');
     const comment = data.get('comment');
-    const result = await addComment('testcase', name, comment);
+    const result = await addComment(itemId, name, comment);
     if (result) displayComment(result);
     commentCounterChange();
     form.reset();
@@ -126,7 +129,7 @@ const setupComments = (data) => {
   let itemId = data.name + data.tail
   createStructure();
   displayDetails(data);
-  displayComments();
+  displayComments(itemId);
   displayCommentForm(itemId);
 };
 

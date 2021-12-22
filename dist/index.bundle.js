@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\r\\n  padding: 0;\\r\\n  margin: 0;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://Pokedex/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap);\"]);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\r\\n  padding: 0;\\r\\n  margin: 0;\\r\\n  box-sizing: border-box;\\r\\n  font-family: 'Poppins', sans-serif;\\r\\n}\\r\\n.item-wrapper {\\r\\n  display: grid;\\r\\n  width: 100%;\\r\\n  grid-template-columns: repeat(4, 1fr);\\r\\n  gap: 20px;\\r\\n  margin: 10px auto;\\r\\n}\\r\\n\\r\\nimg {\\r\\n  width: 200px;\\r\\n  height: 250px;\\r\\n}\\r\\n\\r\\n.card {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  align-items: center;\\r\\n  gap: 10px;\\r\\n}\\r\\n\\r\\n.card-image {\\r\\n  background-color: rgb(241, 241, 241);\\r\\n  padding: 30px;\\r\\n  border-radius: 10px;\\r\\n}\\r\\n\\r\\n.card-info {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n.likes {\\r\\n  display: flex;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\nbutton {\\r\\n  padding: 10px;\\r\\n  color: red;\\r\\n  border: none;\\r\\n  outline: none;\\r\\n  border-radius: 20px;\\r\\n  transition: all 0.5s;\\r\\n}\\r\\n\\r\\nbutton:hover {\\r\\n  background-color: red;\\r\\n  color: white;\\r\\n  cursor: pointer;\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://Pokedex/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,13 +110,43 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/scripts/amibo.js":
+/*!******************************!*\
+  !*** ./src/scripts/amibo.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://Pokedex/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Amibo)\n/* harmony export */ });\nclass Amibo {\r\n  baseUrl = 'https://www.amiiboapi.com/api/amiibo/';\r\n\r\n  getAmibo = async () => {\r\n    const response = await fetch(this.baseUrl, {\r\n      method: 'GET',\r\n      mode: 'cors',\r\n      headers: {\r\n        'Content-Type': 'application/json',\r\n      },\r\n    });\r\n    const finalResponse = await response.json();\r\n    if (response.status === 200) {\r\n      return finalResponse\r\n    }\r\n    return null;\r\n  }\r\n\r\n  static renderer = (name, image, container) => {\r\n    let parent = '';\r\n      parent += `\r\n      <div class=\"card\">\r\n        <div class=\"card-image\">\r\n          <img src=\"${image}\" alt=\"Amiibo image\"/>\r\n        </div>\r\n        <div class=\"card-info\">\r\n          <span>${name}</span>\r\n          <span class=\"likes\">\r\n            <i class='bx bxs-heart bx-sm'></i>\r\n            <p>2 likes</p>\r\n          </span>\r\n        </div>\r\n        <div class=\"card-action\">\r\n          <button type=\"button\">Comment</button>\r\n        </div>\r\n      </div>\r\n      `;\r\n    container.innerHTML += parent;\r\n  }\r\n\r\n}\n\n//# sourceURL=webpack://Pokedex/./src/scripts/amibo.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/domvar.js":
+/*!*******************************!*\
+  !*** ./src/scripts/domvar.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"domVars\": () => (/* binding */ domVars)\n/* harmony export */ });\nconst domVars = {\r\n  wrap: document.querySelector('.item-wrapper'),\r\n};\r\n\r\n\n\n//# sourceURL=webpack://Pokedex/./src/scripts/domvar.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/index.js":
+/*!******************************!*\
+  !*** ./src/scripts/index.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n/* harmony import */ var _amibo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./amibo */ \"./src/scripts/amibo.js\");\n/* harmony import */ var _likes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./likes */ \"./src/scripts/likes.js\");\n/* harmony import */ var _domvar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./domvar */ \"./src/scripts/domvar.js\");\n\r\n\r\n\r\n\r\n\r\nconst pokeData = new _amibo__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\r\nconst likes = new _likes__WEBPACK_IMPORTED_MODULE_2__[\"default\"]()\r\n\r\npokeData.getAmibo()\r\n  .then((data) => {\r\n    for (let i = 0; i < 150; i += 1) {\r\n      _amibo__WEBPACK_IMPORTED_MODULE_1__[\"default\"].renderer(data.amiibo[i].name, data.amiibo[i].image, _domvar__WEBPACK_IMPORTED_MODULE_3__.domVars.wrap)\r\n    }\r\n  })\r\nlikes.newLikeInferfaces()\r\n  .then((data) => {\r\n    console.log(data)\r\n  })\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://Pokedex/./src/scripts/index.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/likes.js":
+/*!******************************!*\
+  !*** ./src/scripts/likes.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Likes)\n/* harmony export */ });\nclass Likes {\r\n  baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'\r\n  interfaceUrl = ''\r\n  newLikeInferfaces = async () => {\r\n    const response = await fetch(this.baseUrl, {\r\n      method: 'POST',\r\n      mode: 'cors',\r\n      headers: {\r\n        'Content-Type': 'application/json',\r\n      },\r\n    });\r\n    const finalResponse = await response.json();\r\n    if (response.status === 200) {\r\n      return finalResponse\r\n    }\r\n    return null;\r\n  }\r\n}\n\n//# sourceURL=webpack://Pokedex/./src/scripts/likes.js?");
 
 /***/ })
 
@@ -192,7 +222,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/scripts/index.js");
 /******/ 	
 /******/ })()
 ;

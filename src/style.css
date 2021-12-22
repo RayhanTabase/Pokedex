@@ -1,3 +1,58 @@
-body {
-  background: grey;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.item-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 10px auto;
+}
+
+img {
+  width: 200px;
+  height: 250px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-image {
+  background-color: rgb(241, 241, 241);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  padding: 10px;
+  color: red;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
 }

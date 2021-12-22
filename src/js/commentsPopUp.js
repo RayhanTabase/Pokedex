@@ -62,16 +62,16 @@ const displayDetails = (data) => {
   const container = document.querySelector('.poke-details');
   container.innerHTML = `
     <div class="image-conatiner"> 
-      <img src="#" alt="pokemon">
+      <img src="${data.image}" alt="pokemon">
     </div>
 
-    <h2> ${data} </h2>
+    <h2> ${data.name} </h2>
 
     <ul class='attributes'>
-      <li> Fuel: titanium </li>
-      <li> Weight: 200 </li>
-      <li> Height: 100 </li>
-      <li> Color:black </li>
+      <li> gameSeries: ${data.gameSeries} </li>
+      <li> type: ${data.type} </li>
+      <li> released in eu: ${data.release.eu} </li>
+      <li> released in au: ${data.release.au} </li>
     </ul>
   `;
 };
@@ -93,7 +93,7 @@ const displayComments = async () => {
   commentCounterChange();
 };
 
-const displayCommentForm = () => {
+const displayCommentForm = (itemId) => {
   const container = document.querySelector('.addCommentForm');
   container.innerHTML = `
     <h3>Add a comment</h3>
@@ -123,10 +123,11 @@ const displayCommentForm = () => {
 };
 
 const setupComments = (data) => {
+  let itemId = data.name + data.tail
   createStructure();
   displayDetails(data);
   displayComments();
-  displayCommentForm();
+  displayCommentForm(itemId);
 };
 
 export default setupComments;

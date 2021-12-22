@@ -1,4 +1,3 @@
-import TestImage from '../images/logo/logo.png';
 import { addComment, getComments, countComments } from './CommentApi.js';
 
 const mainPage = document.querySelector('main');
@@ -17,14 +16,12 @@ const hideMainContent = (status) => {
   header.style.display = 'block';
 };
 
-// Delete pop ups of pokemon details
 const deletePopUps = () => {
   const prevContainer = document.querySelector('.container-pokemon-details');
   if (prevContainer) prevContainer.remove();
 };
 
-// Takes in pokemon details and displays them in a pop up
-const displayDetails = () => {
+const createStructure = () => {
   hideMainContent(true);
 
   deletePopUps();
@@ -36,22 +33,10 @@ const displayDetails = () => {
     <button type="button" class="closePopUp"> <i class="fas fa-times"></i> </button>
 
     <div class="poke-details">
-      <div class="image-conatiner"> 
-        <img src="${TestImage}" alt="pokemon">
-      </div>
-
-      <h2> Name </h2>
-
-      <ul class='attributes'>
-        <li> Fuel: titanium </li>
-        <li> Weight: 200 </li>
-        <li> Height: 100 </li>
-        <li> Color:black </li>
-      </ul>
     </div>
 
     <div class="poke-comments">
-      <h3> Comments <span class="comment-counter"></span> </h3>
+      <h3> Comments <span class="badge badge-dark comment-counter"></span> </h3>
       <ul class="container-comments"> </ul>
     </div>
 
@@ -60,55 +45,88 @@ const displayDetails = () => {
   </div>
   `;
   const closebtn = container.querySelector('button');
-  closebtn.addEventListener('click', deletePopUps);
+  closebtn.addEventListener('click', () => {
+    deletePopUps();
+    hideMainContent(false);
+  });
   document.body.appendChild(container);
 };
 
+const commentCounterChange = () => {
+  const number = countComments();
+  const commentCounter = document.querySelector('.comment-counter');
+  commentCounter.innerHTML = `${number}`;
+};
+
+const displayDetails = (data) => {
+  const container = document.querySelector('.poke-details');
+  container.innerHTML = `
+    <div class="image-conatiner"> 
+      <img src="#" alt="pokemon">
+    </div>
+
+    <h2> ${data} </h2>
+
+    <ul class='attributes'>
+      <li> Fuel: titanium </li>
+      <li> Weight: 200 </li>
+      <li> Height: 100 </li>
+      <li> Color:black </li>
+    </ul>
+  `;
+};
+
 const displayComment = (data) => {
-  console.log(data.username)
   const container = document.querySelector('.container-comments');
-  let comment = document.createElement('li');
+  const comment = document.createElement('li');
   comment.innerHTML = `
   <li>${data.creation_date} ${data.username} ${data.comment} <li>
   `;
   container.append(comment);
-} 
+};
 
 const displayComments = async () => {
-  let allComments = await getComments('testcase');
+  const allComments = await getComments('testcase');
   allComments.forEach((comment) => {
     displayComment(comment);
   });
   commentCounterChange();
-}
+};
 
 const displayCommentForm = () => {
   const container = document.querySelector('.addCommentForm');
   container.innerHTML = `
     <h3>Add a comment</h3>
     <form>
-      <input type="text" placeholder="Your name" name="name"/>
-      <textarea name="comment" id="" cols="20" rows="10"></textarea>
-      <button type="submit">Comment</button>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Your name" name="name" required/>
+    </div>
+    <div class="form-group">
+      <textarea name="comment" class="form-control" rows="6" placeholder="Your insights" required></textarea>
+    </div>
+    <div class="form-group text-center">
+      <button class="btn btn-success btn-lg" type="submit">Comment</button>
+    </div>
     </form>
-  `
-  let form = container.querySelector('form');
+  `;
+  const form = container.querySelector('form');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    let name = data.get('name');
-    let comment = data.get('comment');
-    let result = await addComment("testcase",name,comment);
+    const name = data.get('name');
+    const comment = data.get('comment');
+    const result = await addComment('testcase', name, comment);
     if (result) displayComment(result);
     commentCounterChange();
     form.reset();
   });
-}
+};
 
-const commentCounterChange = () => {
-  let number = countComments();
-  const commentCounter = document.querySelector('.comment-counter');
-  commentCounter.innerHTML = `${number}`;
-}
+const setupComments = (data) => {
+  createStructure();
+  displayDetails(data);
+  displayComments();
+  displayCommentForm();
+};
 
-export {displayDetails, displayComments, displayCommentForm};
+export default setupComments;

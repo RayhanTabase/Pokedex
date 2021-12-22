@@ -5,8 +5,6 @@
   margin-top: 3em;
   min-height: 90vh;
 
-
-
   .pokemon-details-box {
     width: 85%;
     min-height: 70vh;
@@ -25,7 +23,7 @@
       border: 0;
       font-size: 3rem;
     }
-    
+
     .poke-details,
     .poke-comments,
     .addCommentForm {
@@ -35,7 +33,7 @@
 
     .poke-details {
       height: 15em;
-    
+
       .image-conatiner {
         height: 25%;
         border: 1px solid black;
@@ -60,7 +58,9 @@
       }
     }
 
-    .poke-comments{
+    .poke-comments {
+      margin-top: 3em;
+
       h3 {
         text-align: center;
         margin-bottom: 1em;
@@ -73,12 +73,6 @@
       h3 {
         text-align: center;
         margin-bottom: 1em;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1em;
       }
     }
   }

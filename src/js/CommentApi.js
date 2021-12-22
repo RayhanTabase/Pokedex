@@ -18,7 +18,7 @@ const addComment = async (itemId,name,comment) => {
         'Accept': 'application/json'
       },
     });
-    if (data.status) {
+    if (data.status === 201) {
       totalComments += 1;
       let currentDate = DateTime.now().toISODate();
       let item = {creation_date:currentDate ,username:name,comment:comment}

@@ -68,10 +68,10 @@ const displayDetails = (data) => {
     <h2> ${data.name} </h2>
 
     <ul class='attributes'>
-      <li> <strong>Series</strong>: ${data.gameSeries} </li>
-      <li> <strong>Type</strong>: ${data.type} </li>
-      <li> <strong>In Japan</strong>: ${data.release.jp ? data.release.jp : "N/A"} </li>
-      <li> <strong>In Europe</strong>: ${data.release.eu ? data.release.eu : "N/A"} </li>
+      <li> <span class="title">Series</span>: ${data.gameSeries} </li>
+      <li> <span class="title">Type</span>: ${data.type} </li>
+      <li> <span class="title">In Japan</span>: ${data.release.jp ? data.release.jp : "N/A"} </li>
+      <li> <span class="title">In Europe</span>: ${data.release.eu ? data.release.eu : "N/A"} </li>
     </ul>
   `;
 };

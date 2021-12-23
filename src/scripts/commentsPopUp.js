@@ -108,7 +108,7 @@ const displayCommentForm = (itemId) => {
       <textarea name="comment" class="form-control" rows="6" placeholder="Your insights" required></textarea>
     </div>
     <div class="form-group text-center">
-      <button class="btn btn-success btn-lg" type="submit">Comment</button>
+      <button class="btn btn-success" type="submit">Comment</button>
     </div>
     </form>
   `;
@@ -125,11 +125,11 @@ const displayCommentForm = (itemId) => {
   });
 };
 
-const setupComments = (data) => {
+const setupComments = async (data) => {
   let itemId = data.name + data.tail
   createStructure();
   displayDetails(data);
-  displayComments(itemId);
+  await displayComments(itemId);
   displayCommentForm(itemId);
 };
 

@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "luxon": "^2.2.0",
     "boxicons": "^2.1.1"
   }
 }

@@ -1,3 +1,5 @@
+import setupComments from './commentsPopUp.js';
+
 export default class Amibo {
   baseAmiUrl = 'https://www.amiiboapi.com/api/amiibo/';
 
@@ -46,25 +48,29 @@ export default class Amibo {
   }
 
   static renderer = (data, container) => {
-    const parent = `
-      <div class="cardo">
-        <div class="cardo-image">
-          <img src="${data.image}" alt="Amiibo image"/>
-        </div>
-        <div class="cardo-info">
-          <span>${data.name}</span>
-          <div class="likes">
-            <i class="bx bxs-heart bx-sm" id="merci" data-id="${data.tail}"></i>
-            <span class="aime" data-id="${data.tail}"></span>
-          </div>
-        </div>
-        <input type="hidden" class="unique" value="${data.tail}"
-        <div class="cardo-action">
-          <button class="comment" type="button">Comment</button>
+    const parent = document.createElement('div');
+    parent.className = 'cardo';
+    parent.innerHTML = `
+      <div class="cardo-image">
+        <img src="${data.image}" alt="Amiibo image"/>
+      </div>
+      <div class="cardo-info">
+        <span>${data.name}</span>
+        <div class="likes">
+          <i class="bx bxs-heart bx-sm" id="merci" data-id="${data.tail}"></i>
+          <span class="aime" data-id="${data.tail}"></span>
         </div>
       </div>
+      <input type="hidden" class="unique" value="${data.tail}"
+      <div class="cardo-action">
+        <button class="comment" type="button">Comment</button>
+      </div>
       `;
-    container.innerHTML += parent;
+
+    // Add comment feature
+    const commentBtn = parent.querySelector('button');
+    commentBtn.addEventListener('click', () => setupComments(data));
+    container.appendChild(parent);
     return container;
   }
 }

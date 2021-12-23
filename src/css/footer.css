@@ -1,6 +1,7 @@
 footer {
   margin-top: 2em;
   width: 100%;
+  min-width: 100%;
   padding: 1em;
   background: #f8f9fa;
 }

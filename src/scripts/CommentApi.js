@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon');
 
-const apiBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/cUCVyNmz0oMUJV0fH06j';
+const apiBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PPNxNau41cY6yOFKoL3b';
 var totalComments = 0;
 
 const stringValidator = (string) => {

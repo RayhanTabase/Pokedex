@@ -3,6 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul {
@@ -15,6 +16,6 @@ a {
 }
 
 main {
-  min-height: 60vh;
+  min-height: 80vh;
 }
 /*# sourceMappingURL=topograpgy.css.map */

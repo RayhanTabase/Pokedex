@@ -79,7 +79,7 @@ const displayDetails = (data) => {
 const displayComment = (data) => {
   const container = document.querySelector('.container-comments');
   const comment = document.createElement('li');
-  comment.className = "userComment"
+  comment.className = 'userComment';
   comment.innerHTML = `
   <span class="date">${data.creation_date}</span> <br> <span class="name">${data.username}</span> <br> <span class="comment">${data.comment} </span>
   `;
@@ -97,10 +97,10 @@ const displayComments = async (itemId) => {
 };
 
 const formErrorMessage = (display) => {
-  const container = document.querySelector('.formErrorMessage')
+  const container = document.querySelector('.formErrorMessage');
   if (display) container.style.display = 'block';
   else container.style.display = 'none';
-}
+};
 
 const displayCommentForm = (itemId) => {
   const container = document.querySelector('.addCommentForm');
@@ -130,7 +130,7 @@ const displayCommentForm = (itemId) => {
     e.preventDefault();
     formErrorMessage(false);
     formButton.disabled = true;
-    loader.style.display = "block";
+    loader.style.display = 'block';
     const data = new FormData(form);
     const name = data.get('name');
     const comment = data.get('comment');
@@ -140,12 +140,12 @@ const displayCommentForm = (itemId) => {
     commentCounterChange();
     form.reset();
     formButton.disabled = false;
-    loader.style.display = "none";
+    loader.style.display = 'none';
   });
 };
 
 const setupComments = async (data) => {
-  let itemId = data.name + data.tail
+  const itemId = data.name + data.tail;
   createStructure();
   displayDetails(data);
   await displayComments(itemId);

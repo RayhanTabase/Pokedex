@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -18,4 +18,3 @@ a {
 main {
   min-height: 80vh;
 }
-/*# sourceMappingURL=topograpgy.css.map */

@@ -1,4 +1,4 @@
-import setupComments from "./commentsPopUp.js";
+import setupComments from './commentsPopUp.js';
 
 export default class Amibo {
   baseAmiUrl = 'https://www.amiiboapi.com/api/amiibo/';
@@ -49,7 +49,7 @@ export default class Amibo {
 
   static renderer = (data, container) => {
     const parent = document.createElement('div');
-    parent.className = 'cardo'
+    parent.className = 'cardo';
     parent.innerHTML = `
       <div class="cardo-image">
         <img src="${data.image}" alt="Amiibo image"/>
@@ -68,8 +68,8 @@ export default class Amibo {
       `;
 
     // Add comment feature
-    let commentBtn = parent.querySelector('button');
-    commentBtn.addEventListener('click', ()=> setupComments(data))
+    const commentBtn = parent.querySelector('button');
+    commentBtn.addEventListener('click', () => setupComments(data));
     container.appendChild(parent);
     return container;
   }

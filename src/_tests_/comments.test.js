@@ -1,4 +1,4 @@
-import {addComment,countComments} from '../js/CommentApi.js'
+import {addComment,countComments} from '../scripts/CommentApi.js'
 
 global.fetch = jest.fn(() =>
   Promise.resolve({

@@ -1,5 +1,5 @@
 import './css/style.css';
-import setupComments from './js/commentsPopUp.js';
+import setupComments from './scripts/commentsPopUp.js';
 import Amibo from './scripts/amibo.js';
 import { domVars } from './scripts/domvar.js';
 import Icon from '../testImage.jpg'

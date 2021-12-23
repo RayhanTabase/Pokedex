@@ -70,8 +70,8 @@ const displayDetails = (data) => {
     <ul class='attributes'>
       <li> <span class="title">Series</span>: ${data.gameSeries} </li>
       <li> <span class="title">Type</span>: ${data.type} </li>
-      <li> <span class="title">In Japan</span>: ${data.release.jp ? data.release.jp : "N/A"} </li>
-      <li> <span class="title">In Europe</span>: ${data.release.eu ? data.release.eu : "N/A"} </li>
+      <li> <span class="title">In Japan</span>: ${data.release.jp ? data.release.jp : 'N/A'} </li>
+      <li> <span class="title">In Europe</span>: ${data.release.eu ? data.release.eu : 'N/A'} </li>
     </ul>
   `;
 };
@@ -88,23 +88,22 @@ const displayComment = (data) => {
 
 const displayNoComments = (status) => {
   const container = document.querySelector('.container-comments');
-  if(status) {
+  if (status) {
     container.innerHTML = '<p class="errorMessage">No comments </p>';
-    return
+    return;
   }
   container.innerHTML = '';
-}
+};
 
 const displayComments = async (itemId) => {
-  displayNoComments(false)
+  displayNoComments(false);
   const allComments = await getComments(itemId);
   if (allComments) {
     allComments.forEach((comment) => {
       displayComment(comment);
     });
     commentCounterChange();
-  }
-  else displayNoComments(true);
+  } else displayNoComments(true);
 };
 
 const formErrorMessage = (display) => {
@@ -156,7 +155,6 @@ const displayCommentForm = (itemId) => {
 };
 
 const setupComments = async (data) => {
-  console.log(data);
   const itemId = data.name + data.tail;
   createStructure();
   displayDetails(data);

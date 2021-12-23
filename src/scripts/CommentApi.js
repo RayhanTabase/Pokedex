@@ -36,7 +36,6 @@ const addComment = async (itemId, name, comment) => {
 
 const getComments = async (itemId) => {
   const data = await fetch(`${apiBaseUrl}/comments?item_id=${itemId}`);
-  console.log(data.status);
   if (data.status === 200) {
     const response = await data.json();
     totalComments = response.length;

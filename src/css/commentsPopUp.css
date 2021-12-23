@@ -125,11 +125,11 @@
 
 .container-pokemon-details .pokemon-details-box .poke-comments .userComment .date {
   margin-right: 2em;
-  font-weight: 600;
+  font-style: italic;
 }
 
 .container-pokemon-details .pokemon-details-box .poke-comments .userComment .name {
-  font-weight: 600;
+  word-break: break-all;
 }
 
 .container-pokemon-details .pokemon-details-box .poke-comments .userComment .comment {
@@ -145,6 +145,7 @@
   text-align: center;
   word-break: break-all;
   margin-top: 1em;
+  font-weight: bold;
 }
 
 .container-pokemon-details .pokemon-details-box .addCommentForm {
@@ -153,6 +154,16 @@
 
 .container-pokemon-details .pokemon-details-box .addCommentForm h3 {
   text-align: center;
+  margin-bottom: 1em;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm .addingCommentSpinner {
+  display: none;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm .formErrorMessage {
+  display: none;
+  color: red;
   margin-bottom: 1em;
 }
 

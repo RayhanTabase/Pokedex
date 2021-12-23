@@ -81,7 +81,7 @@ const displayComment = (data) => {
   const comment = document.createElement('li');
   comment.className = "userComment"
   comment.innerHTML = `
-  <span class="date">${data.creation_date}</span> <span class="name">${data.username}</span> <br> <span class="comment">${data.comment} </span>
+  <span class="date">${data.creation_date}</span> <br> <span class="name">${data.username}</span> <br> <span class="comment">${data.comment} </span>
   `;
   container.append(comment);
 };
@@ -96,32 +96,51 @@ const displayComments = async (itemId) => {
   }
 };
 
+const formErrorMessage = (display) => {
+  const container = document.querySelector('.formErrorMessage')
+  if (display) container.style.display = 'block';
+  else container.style.display = 'none';
+}
+
 const displayCommentForm = (itemId) => {
   const container = document.querySelector('.addCommentForm');
   container.innerHTML = `
     <h3>Add a comment</h3>
     <form>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Your name" name="name" required/>
+      <input type="text" class="form-control" placeholder="Your name" name="name" maxlength="50" required/>
     </div>
     <div class="form-group">
-      <textarea name="comment" class="form-control" rows="6" placeholder="Your insights" required></textarea>
+      <textarea name="comment" class="form-control" rows="6" placeholder="Your insights" maxlength="300" required></textarea>
     </div>
     <div class="form-group text-center">
+      <p class="formErrorMessage">Input name and comment</p>
       <button class="btn btn-success" type="submit">Comment</button>
+      <div class="fa-3x addingCommentSpinner">
+          <i class="fas fa-spinner fa-spin"></i>
+      </div>
     </div>
     </form>
   `;
   const form = container.querySelector('form');
+  const formButton = form.querySelector('button');
+  const loader = form.querySelector('.addingCommentSpinner');
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    formErrorMessage(false);
+    formButton.disabled = true;
+    loader.style.display = "block";
     const data = new FormData(form);
     const name = data.get('name');
     const comment = data.get('comment');
     const result = await addComment(itemId, name, comment);
     if (result) displayComment(result);
+    else formErrorMessage(true);
     commentCounterChange();
     form.reset();
+    formButton.disabled = false;
+    loader.style.display = "none";
   });
 };
 

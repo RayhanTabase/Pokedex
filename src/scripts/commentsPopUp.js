@@ -92,7 +92,8 @@ const displayNoComments = (status) => {
     container.innerHTML = '<p class="errorMessage">No comments </p>';
     return;
   }
-  container.innerHTML = '';
+  const errorMessage = container.querySelector('.errorMessage');
+  if (errorMessage) errorMessage.remove();
 };
 
 const displayComments = async (itemId) => {
@@ -145,8 +146,10 @@ const displayCommentForm = (itemId) => {
     const name = data.get('name');
     const comment = data.get('comment');
     const result = await addComment(itemId, name, comment);
-    if (result) displayComment(result);
-    else formErrorMessage(true);
+    if (result) {
+      displayNoComments(false);
+      displayComment(result);
+    } else formErrorMessage(true);
     commentCounterChange();
     form.reset();
     formButton.disabled = false;

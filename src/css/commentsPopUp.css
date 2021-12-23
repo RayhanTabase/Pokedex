@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600;700&family=Lato:wght@300&display=swap");
+
 .container-pokemon-details {
   display: -webkit-box;
   display: flex;
@@ -22,9 +24,15 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 1em;
+  padding-top: 1.5em;
   overflow: hidden;
   border-radius: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .container-pokemon-details .pokemon-details-box {
+    width: 50%;
+  }
 }
 
 .container-pokemon-details .pokemon-details-box .closePopUp {
@@ -61,6 +69,7 @@
 .container-pokemon-details .pokemon-details-box .poke-details h2 {
   text-align: center;
   margin-bottom: 1em;
+  font-family: "Gluten", cursive;
 }
 
 @media only screen and (max-width: 250px) {
@@ -78,6 +87,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   row-gap: 1em;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details .attributes li .title {
+  font-family: "Gluten", cursive;
 }
 
 @media only screen and (min-width: 992px) {
@@ -99,6 +112,7 @@
 
 .container-pokemon-details .pokemon-details-box .poke-comments {
   margin-top: 3em;
+  font-family: "Gluten", cursive;
 }
 
 .container-pokemon-details .pokemon-details-box .poke-comments h3 {
@@ -112,8 +126,13 @@
   }
 }
 
+.container-pokemon-details .pokemon-details-box .poke-comments .errorMessage {
+  text-align: center;
+  color: #a15252;
+}
+
 .container-pokemon-details .pokemon-details-box .poke-comments .userComment {
-  background: whitesmoke;
+  background: #e7e7e7;
   margin-bottom: 1em;
   padding: 1em;
   width: 100%;
@@ -130,6 +149,7 @@
 }
 
 .container-pokemon-details .pokemon-details-box .poke-comments .userComment .comment {
+  display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -140,11 +160,12 @@
   text-align: center;
   word-break: break-all;
   margin-top: 1em;
-  font-weight: bold;
+  font-family: "Gluten", cursive;
 }
 
 .container-pokemon-details .pokemon-details-box .addCommentForm {
   margin-top: 2em;
+  font-family: "Gluten", cursive;
 }
 
 .container-pokemon-details .pokemon-details-box .addCommentForm h3 {

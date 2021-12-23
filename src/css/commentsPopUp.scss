@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600;700&family=Lato:wght@300&display=swap");
+
 .container-pokemon-details {
   display: flex;
   justify-content: center;
@@ -12,9 +14,13 @@
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding-top: 1.5em;
     overflow: hidden;
     border-radius: 1em;
+
+    @media only screen and (min-width: 768px) {
+      width: 50%;
+    }
 
     .closePopUp {
       align-self: flex-end;
@@ -51,6 +57,7 @@
       h2 {
         text-align: center;
         margin-bottom: 1em;
+        font-family: "Gluten", cursive;
 
         @media only screen and (max-width: 250px) {
           word-break: break-all;
@@ -62,6 +69,12 @@
         display: flex;
         flex-direction: column;
         row-gap: 1em;
+
+        li {
+          .title {
+            font-family: "Gluten", cursive;
+          }
+        }
 
         @media only screen and (min-width: 992px) {
           display: grid;
@@ -78,6 +91,7 @@
 
     .poke-comments {
       margin-top: 3em;
+      font-family: "Gluten", cursive;
 
       h3 {
         text-align: center;
@@ -88,8 +102,13 @@
         }
       }
 
+      .errorMessage {
+        text-align: center;
+        color: rgb(161, 82, 82);
+      }
+
       .userComment {
-        background: whitesmoke;
+        background: rgb(231, 231, 231);
         margin-bottom: 1em;
         padding: 1em;
         width: 100%;
@@ -111,13 +130,14 @@
           text-align: center;
           word-break: break-all;
           margin-top: 1em;
-          font-weight: bold;
+          font-family: "Gluten", cursive;
         }
       }
     }
 
     .addCommentForm {
       margin-top: 2em;
+      font-family: "Gluten", cursive;
 
       h3 {
         text-align: center;

@@ -44,6 +44,7 @@ const getComments = async (itemId) => {
     totalComments = response.length;
     return response;
   }
+  totalComments = 0;
   return null;
 };
 

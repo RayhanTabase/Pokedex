@@ -68,10 +68,10 @@ const displayDetails = (data) => {
     <h2> ${data.name} </h2>
 
     <ul class='attributes'>
-      <li> gameSeries: ${data.gameSeries} </li>
-      <li> type: ${data.type} </li>
-      <li> released in eu: ${data.release.eu} </li>
-      <li> released in au: ${data.release.au} </li>
+      <li> <span class="title">Series</span>: ${data.gameSeries} </li>
+      <li> <span class="title">Type</span>: ${data.type} </li>
+      <li> <span class="title">In Japan</span>: ${data.release.jp ? data.release.jp : 'N/A'} </li>
+      <li> <span class="title">In Europe</span>: ${data.release.eu ? data.release.eu : 'N/A'} </li>
     </ul>
   `;
 };
@@ -86,14 +86,25 @@ const displayComment = (data) => {
   container.append(comment);
 };
 
+const displayNoComments = (status) => {
+  const container = document.querySelector('.container-comments');
+  if (status) {
+    container.innerHTML = '<p class="errorMessage">No comments </p>';
+    return;
+  }
+  const errorMessage = container.querySelector('.errorMessage');
+  if (errorMessage) errorMessage.remove();
+};
+
 const displayComments = async (itemId) => {
+  displayNoComments(false);
   const allComments = await getComments(itemId);
   if (allComments) {
     allComments.forEach((comment) => {
       displayComment(comment);
     });
     commentCounterChange();
-  }
+  } else displayNoComments(true);
 };
 
 const formErrorMessage = (display) => {
@@ -135,8 +146,10 @@ const displayCommentForm = (itemId) => {
     const name = data.get('name');
     const comment = data.get('comment');
     const result = await addComment(itemId, name, comment);
-    if (result) displayComment(result);
-    else formErrorMessage(true);
+    if (result) {
+      displayNoComments(false);
+      displayComment(result);
+    } else formErrorMessage(true);
     commentCounterChange();
     form.reset();
     formButton.disabled = false;

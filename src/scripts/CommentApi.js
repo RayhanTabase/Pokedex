@@ -17,7 +17,7 @@ const addComment = async (itemId, name, comment) => {
       body: JSON.stringify({
         item_id: itemId,
         username: name,
-        comment,
+        comment:comment,
       }),
       mode: 'cors',
       headers: {
@@ -38,6 +38,7 @@ const getComments = async (itemId) => {
   const data = await fetch(`${apiBaseUrl}/comments?item_id=${itemId}`);
   if (data.status === 200) {
     const response = await data.json();
+    console.log("res",response)
     totalComments = response.length;
     return response;
   }
@@ -45,6 +46,10 @@ const getComments = async (itemId) => {
   return null;
 };
 
-const countComments = () => totalComments;
+const countComments = async(itemId) => {
+  console.log('2')
+  const array = await getComments(itemId);
+  return array.length;
+};
 
 export { addComment, getComments, countComments };

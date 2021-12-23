@@ -68,10 +68,10 @@ const displayDetails = (data) => {
     <h2> ${data.name} </h2>
 
     <ul class='attributes'>
-      <li> gameSeries: ${data.gameSeries} </li>
-      <li> type: ${data.type} </li>
-      <li> released in eu: ${data.release.eu} </li>
-      <li> released in au: ${data.release.au} </li>
+      <li> <strong>Series</strong>: ${data.gameSeries} </li>
+      <li> <strong>Type</strong>: ${data.type} </li>
+      <li> <strong>In Japan</strong>: ${data.release.jp ? data.release.jp : "N/A"} </li>
+      <li> <strong>In Europe</strong>: ${data.release.eu ? data.release.eu : "N/A"} </li>
     </ul>
   `;
 };
@@ -86,7 +86,17 @@ const displayComment = (data) => {
   container.append(comment);
 };
 
+const displayNoComments = (status) => {
+  const container = document.querySelector('.container-comments');
+  if(status) {
+    container.innerHTML = '<p class="errorMessage">No comments </p>';
+    return
+  }
+  container.innerHTML = '';
+}
+
 const displayComments = async (itemId) => {
+  displayNoComments(false)
   const allComments = await getComments(itemId);
   if (allComments) {
     allComments.forEach((comment) => {
@@ -94,6 +104,7 @@ const displayComments = async (itemId) => {
     });
     commentCounterChange();
   }
+  else displayNoComments(true);
 };
 
 const formErrorMessage = (display) => {
@@ -145,6 +156,7 @@ const displayCommentForm = (itemId) => {
 };
 
 const setupComments = async (data) => {
+  console.log(data);
   const itemId = data.name + data.tail;
   createStructure();
   displayDetails(data);

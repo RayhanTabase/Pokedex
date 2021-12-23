@@ -1,3 +1,4 @@
+
 .container-pokemon-details {
   display: flex;
   justify-content: center;
@@ -15,6 +16,10 @@
     padding: 1em;
     overflow: hidden;
     border-radius: 1em;
+
+    @media only screen and (min-width: 768px) {
+      width: 50%;
+    }
 
     .closePopUp {
       align-self: flex-end;
@@ -88,8 +93,13 @@
         }
       }
 
+      .errorMessage {
+        text-align: center;
+        color: rgb(161, 82, 82);
+      }
+
       .userComment {
-        background: whitesmoke;
+        background: rgb(231, 231, 231);
         margin-bottom: 1em;
         padding: 1em;
         width: 100%;

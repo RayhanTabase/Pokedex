@@ -1,18 +1,18 @@
 export default class Amibo {
   baseAmiUrl = 'https://www.amiiboapi.com/api/amiibo/';
+
   baseLikeUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PPNxNau41cY6yOFKoL3b/likes';
 
   newLike = async (id) => {
-    let data = {item_id:id}
+    const data = { item_id: id };
     const response = await fetch(this.baseLikeUrl, {
       method: 'POST',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
-    console.log(data)
     const finalResponse = response.ok;
     if (response.status === 201) {
       return finalResponse;
@@ -31,14 +31,13 @@ export default class Amibo {
     });
     const finalResponse = await response.json();
     if (response.status === 200) {
-      console.log(finalResponse)
       return finalResponse;
     }
     return null;
   }
 
   getLikes = async () => {
-    const response = await fetch(this.baseLikeUrl)
+    const response = await fetch(this.baseLikeUrl);
     const finalResponse = await response.json();
     if (response.status === 200) {
       return finalResponse;
@@ -47,7 +46,7 @@ export default class Amibo {
   }
 
   static renderer = (data, container) => {
-    let parent = `
+    const parent = `
       <div class="cardo">
         <div class="cardo-image">
           <img src="${data.image}" alt="Amiibo image"/>

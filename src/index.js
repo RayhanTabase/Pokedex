@@ -5,54 +5,49 @@ import { domVars } from './scripts/domvar.js';
 const myAmiibo = new Amibo();
 
 const displayTotalAmiibo = async (counterElement) => {
-  let data = await myAmiibo.getAmibo()
-  counterElement.innerHTML = data.amiibo.length
-}
+  const data = await myAmiibo.getAmibo();
+  counterElement.innerHTML = data.amiibo.length;
+};
 
 const displayAmibo = async () => {
-  let data = await myAmiibo.getAmibo()
+  const data = await myAmiibo.getAmibo();
   for (let i = 0; i < 5; i += 1) {
-    Amibo.renderer(data.amiibo[i], domVars.wrap)
+    Amibo.renderer(data.amiibo[i], domVars.wrap);
   }
-}
+};
 
 const logLikes = async () => {
-  let likeData = await myAmiibo.getLikes()
-  let likespan = document.querySelectorAll('.aime')
+  const likeData = await myAmiibo.getLikes();
+  const likespan = document.querySelectorAll('.aime');
   likespan.forEach((spano) => {
     likeData.forEach((like) => {
       if (spano.dataset.id === like.item_id) {
-        spano.innerHTML = `${like.likes} likes`
+        spano.innerHTML = `${like.likes} likes`;
       }
-    })
-  })
-}
+    });
+  });
+};
 
 const likeAmiibo = async () => {
-  let loves = document.querySelectorAll('.bxs-heart')
+  const loves = document.querySelectorAll('.bxs-heart');
   for (let i = 0; i < loves.length; i += 1) {
-    let unique = document.querySelectorAll('.unique')
+    const unique = document.querySelectorAll('.unique');
     unique.forEach((unID) => {
       if (loves[i].dataset.id === unID.value) {
         loves[i].addEventListener('click', async () => {
-          let res = await myAmiibo.newLike(unID.value)
+          const res = await myAmiibo.newLike(unID.value);
           if (res) {
-            logLikes()
+            logLikes();
           }
-        })
+        });
       }
-    })
+    });
   }
-}
+};
 
 window.addEventListener('DOMContentLoaded', async () => {
   await displayAmibo();
-  likeAmiibo()
-  logLikes()
-  displayTotalAmiibo(domVars.counters)
-})
-
-
-
-
-
+  likeAmiibo();
+  logLikes();
+  displayTotalAmiibo(domVars.counters);
+});

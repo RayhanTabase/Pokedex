@@ -5,4 +5,5 @@ module.exports = {
   coverageProvider: 'v8',
   restoreMocks: false,
   setupFiles: ['jest-localstorage-mock'],
+  testEnvironment: 'jsdom',
 };

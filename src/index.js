@@ -11,7 +11,7 @@ const displayTotalAmiibo = async (counterElement) => {
 
 const displayAmibo = async () => {
   const data = await myAmiibo.getAmibo();
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 25; i += 1) {
     Amibo.renderer(data.amiibo[i], domVars.wrap);
   }
 };

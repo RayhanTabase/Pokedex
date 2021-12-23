@@ -4,9 +4,10 @@ import { domVars } from './scripts/domvar.js';
 
 const myAmiibo = new Amibo();
 
-const displayTotalAmiibo = async (counterElement) => {
+const displayTotalAmiibo = async () => {
   const data = await myAmiibo.getAmibo();
-  counterElement.innerHTML = data.amiibo.length;
+  domVars.counters.innerHTML = data.amiibo.length;
+  return data.amiibo.length;
 };
 
 const displayAmibo = async () => {
@@ -49,5 +50,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   await displayAmibo();
   likeAmiibo();
   logLikes();
-  displayTotalAmiibo(domVars.counters);
+  displayTotalAmiibo();
 });

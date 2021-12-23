@@ -66,7 +66,7 @@ img {
   gap: 5px;
 }
 
-button {
+.comment {
   padding: 10px;
   color: red;
   border: none;
@@ -75,7 +75,7 @@ button {
   transition: all 0.5s;
 }
 
-button:hover {
+.comment:hover {
   background-color: red;
   color: white;
   cursor: pointer;

@@ -14,7 +14,7 @@ global.fetch = jest.fn(() => Promise.resolve({
 }));
 
 describe('Test to count number of items returned from API', () => {
-    it('Then the correct average should be returned', async() => {
+    it('Expected result should be three', async() => {
         var result = await countComments('test');
         expect(result).toEqual(3);
     });

@@ -2,7 +2,7 @@
 A simple web app that shows details concerning different Amiibo. Built using HTML,CSS, and JavaScript. Users view a list of amiibo and have the possibility to like and comment on their favorite amiibo.
 
 ## Video presentation
-* [Video](https://github.com/RayhanTabase/Pokedex/pull/30)
+* [Video](https://drive.google.com/file/d/1uWRGgGf2-dIB1MxPkByqx1PbaKrkF1-2/view?usp=sharing)
 
 ## Screenshots
 ![To-Do](src/assets/images/smash.png)

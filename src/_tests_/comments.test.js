@@ -1,18 +1,18 @@
-import { addComment, countComments } from '../scripts/CommentApi.js';
+import { countComments } from '../scripts/CommentApi.js';
+
 
 global.fetch = jest.fn(() => Promise.resolve({
-  status: 201,
-  body:"{1,77,3}",
+    status:200,
+    json(){
+      return [{1:"1"},{2:"2"},{3:"3"}];
+    }
 }));
 
-// beforeEach(() => {
-//   fetch.mockClear();
-// });
-
-describe('Test comment counnter by add two valid comments and one invalid comment', () => {
-  test('Check number of comments', async () => {
-    // console.log((await fetch('a')))
-    expect(countComments("id")).toEqual(2);
-
-  });
+describe('Gold prices', () => {
+    describe('When the average price is called for 7 days', () => {
+        it('Then the correct average should be returned', async() => {
+            var result = await countComments('test');
+            expect(result).toEqual(3);
+        });
+    });
 });

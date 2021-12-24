@@ -1,0 +1,94 @@
+.item-counter {
+  width: 100%;
+  padding: 10px;
+}
+
+.item-counter h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 900;
+  color: red;
+}
+
+.item-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .item-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .item-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .item-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+img {
+  width: 250px;
+  height: 300px;
+}
+
+.cardo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+}
+
+.cardo-image {
+  background-color: rgb(241, 241, 241);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.cardo-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.comment {
+  padding: 10px;
+  color: red;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+.comment:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+#merci {
+  transform: scale(1);
+  color: rgb(117, 112, 112);
+  transition: all 0.3s;
+}
+
+#merci:hover {
+  cursor: pointer;
+  color: red;
+  transform: scale(1.5);
+}

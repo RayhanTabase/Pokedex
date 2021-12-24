@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600;700&family=Lato:wght@300&display=swap");
+
+.container-pokemon-details {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 3em;
+  min-height: 90vh;
+}
+
+.container-pokemon-details .pokemon-details-box {
+  width: 85%;
+  min-height: 70vh;
+  border: 3px solid #b4b2b2;
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 1.5em;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .container-pokemon-details .pokemon-details-box {
+    width: 50%;
+  }
+}
+
+.container-pokemon-details .pokemon-details-box .closePopUp {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  position: absolute;
+  width: 12%;
+  min-width: 12%;
+  background: none;
+  border: 0;
+  font-size: 3rem;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details,
+.container-pokemon-details .pokemon-details-box .poke-comments,
+.container-pokemon-details .pokemon-details-box .addCommentForm {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details .image-conatiner {
+  width: 100%;
+  height: 17em;
+  margin-bottom: 1em;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details .image-conatiner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: "Gluten", cursive;
+}
+
+@media only screen and (max-width: 250px) {
+  .container-pokemon-details .pokemon-details-box .poke-details h2 {
+    word-break: break-all;
+  }
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details .attributes {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-details .attributes li .title {
+  font-family: "Gluten", cursive;
+}
+
+@media only screen and (min-width: 992px) {
+  .container-pokemon-details .pokemon-details-box .poke-details .attributes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 45% 45%;
+    grid-template-columns: 45% 45%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    word-break: break-all;
+  }
+
+  .container-pokemon-details .pokemon-details-box .poke-details .attributes li:nth-child(2n) {
+    text-align: end;
+  }
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments {
+  margin-top: 3em;
+  font-family: "Gluten", cursive;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments h3 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 250px) {
+  .container-pokemon-details .pokemon-details-box .poke-comments h3 {
+    word-break: break-all;
+  }
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments .errorMessage {
+  text-align: center;
+  color: #a15252;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments .userComment {
+  background: #e7e7e7;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+  border-left: 4px solid #65658a;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments .userComment .date {
+  margin-right: 2em;
+  font-style: italic;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments .userComment .name {
+  word-break: break-all;
+}
+
+.container-pokemon-details .pokemon-details-box .poke-comments .userComment .commentActual {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  word-break: break-all;
+  margin-top: 1em;
+  font-family: "Gluten", cursive;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm {
+  margin-top: 2em;
+  font-family: "Gluten", cursive;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm h3 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm .addingCommentSpinner {
+  display: none;
+}
+
+.container-pokemon-details .pokemon-details-box .addCommentForm .formErrorMessage {
+  display: none;
+  color: red;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 250px) {
+  .container-pokemon-details .pokemon-details-box .addCommentForm h3 {
+    word-break: break-all;
+  }
+
+  .container-pokemon-details .pokemon-details-box .addCommentForm button {
+    width: 50px;
+    max-width: 50px;
+  }
+}

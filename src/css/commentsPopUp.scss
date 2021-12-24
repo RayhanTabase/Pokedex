@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@600;700&family=Lato:wght@300&display=swap");
+
+.container-pokemon-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+  min-height: 90vh;
+
+  .pokemon-details-box {
+    width: 85%;
+    min-height: 70vh;
+    border: 3px solid rgb(180, 178, 178);
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5em;
+    overflow: hidden;
+    border-radius: 1em;
+
+    @media only screen and (min-width: 768px) {
+      width: 50%;
+    }
+
+    .closePopUp {
+      align-self: flex-end;
+      position: absolute;
+      width: 12%;
+      min-width: 12%;
+      background: none;
+      border: 0;
+      font-size: 3rem;
+    }
+
+    .poke-details,
+    .poke-comments,
+    .addCommentForm {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
+    .poke-details {
+      // height: 15em;
+
+      .image-conatiner {
+        width: 100%;
+        height: 17em;
+        margin-bottom: 1em;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 1em;
+        font-family: "Gluten", cursive;
+
+        @media only screen and (max-width: 250px) {
+          word-break: break-all;
+        }
+      }
+
+      .attributes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+
+        li {
+          .title {
+            font-family: "Gluten", cursive;
+          }
+        }
+
+        @media only screen and (min-width: 992px) {
+          display: grid;
+          grid-template-columns: 45% 45%;
+          justify-content: space-between;
+          word-break: break-all;
+
+          li:nth-child(2n) {
+            text-align: end;
+          }
+        }
+      }
+    }
+
+    .poke-comments {
+      margin-top: 3em;
+      font-family: "Gluten", cursive;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 1em;
+
+        @media only screen and (max-width: 250px) {
+          word-break: break-all;
+        }
+      }
+
+      .errorMessage {
+        text-align: center;
+        color: rgb(161, 82, 82);
+      }
+
+      .userComment {
+        background: rgb(231, 231, 231);
+        margin-bottom: 1em;
+        padding: 1em;
+        width: 100%;
+        border-left: 4px solid rgb(101, 101, 138);
+
+        .date {
+          margin-right: 2em;
+          font-style: italic;
+        }
+
+        .name {
+          word-break: break-all;
+        }
+
+        .commentActual {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          word-break: break-all;
+          margin-top: 1em;
+          font-family: "Gluten", cursive;
+        }
+      }
+    }
+
+    .addCommentForm {
+      margin-top: 2em;
+      font-family: "Gluten", cursive;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 1em;
+      }
+
+      .addingCommentSpinner {
+        display: none;
+      }
+
+      .formErrorMessage {
+        display: none;
+        color: red;
+        margin-bottom: 1em;
+      }
+
+      @media only screen and (max-width: 250px) {
+        h3 {
+          word-break: break-all;
+        }
+
+        button {
+          width: 50px;
+          max-width: 50px;
+        }
+      }
+    }
+  }
+}

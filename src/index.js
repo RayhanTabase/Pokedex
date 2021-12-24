@@ -6,8 +6,12 @@ const myAmiibo = new Amibo();
 
 const displayTotalAmiibo = async () => {
   const data = await myAmiibo.getAmibo();
-  domVars.counters.innerHTML = data.amiibo.length;
-  return data.amiibo.length;
+  let counter = 0;
+  for (let i = 0; i < 25; i += 1) {
+    counter += 1;
+  }
+  domVars.counters.innerHTML = `${counter} / ${data.amiibo.length}`;
+  return counter;
 };
 
 const displayAmibo = async () => {

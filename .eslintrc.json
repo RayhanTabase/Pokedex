@@ -12,6 +12,7 @@
   "extends": ["airbnb-base"],
   "rules": {
     "no-shadow": "off",
+    "linebreak-style": ["error", "windows"],
     "import/prefer-default-export": "off",
     "no-param-reassign": "off",
     "eol-last": "off",

@@ -23,14 +23,7 @@ export default class Amibo {
   }
 
   getAmibo = async () => {
-    const response = await fetch(this.baseAmiUrl, {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'force-cache',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(this.baseAmiUrl);
     const finalResponse = await response.json();
     if (response.status === 200) {
       return finalResponse;

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 const { DateTime } = require('luxon');
 
 const apiBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PPNxNau41cY6yOFKoL3b';

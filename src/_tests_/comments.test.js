@@ -13,11 +13,9 @@ global.fetch = jest.fn(() => Promise.resolve({
     }
 }));
 
-describe('Gold prices', () => {
-    describe('When the average price is called for 7 days', () => {
-        it('Then the correct average should be returned', async() => {
-            var result = await countComments('test');
-            expect(result).toEqual(3);
-        });
+describe('Test to count number of items returned from API', () => {
+    it('Then the correct average should be returned', async() => {
+        var result = await countComments('test');
+        expect(result).toEqual(3);
     });
 });

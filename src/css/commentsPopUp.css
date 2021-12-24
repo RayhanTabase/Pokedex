@@ -148,7 +148,7 @@
   word-break: break-all;
 }
 
-.container-pokemon-details .pokemon-details-box .poke-comments .userComment .comment {
+.container-pokemon-details .pokemon-details-box .poke-comments .userComment .commentActual {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;

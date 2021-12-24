@@ -81,7 +81,7 @@ const displayComment = (data) => {
   const comment = document.createElement('li');
   comment.className = 'userComment';
   comment.innerHTML = `
-  <span class="date">${data.creation_date}</span> <br> <span class="name">${data.username}</span> <br> <span class="comment">${data.comment} </span>
+  <span class="date">${data.creation_date}</span> <br> <span class="name">${data.username}</span> <br> <span class="commentActual">${data.comment} </span>
   `;
   container.append(comment);
 };
